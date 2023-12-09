@@ -25,6 +25,9 @@ describe('helper test (with setup and tear-down)', function () {
 
     expect(sumPaymentTotal('billAmt')).toEqual(300);
   });
+
+  //
+
   it('should sum total tip percentage on sumPaymentTotal()', function () {
     expect(sumPaymentTotal('tipPercent')).toEqual(15);
 
