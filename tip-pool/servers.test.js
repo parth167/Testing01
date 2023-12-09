@@ -16,6 +16,15 @@ describe('Servers test (with setup and tear-down)', function () {
     submitServerInfo();
     expect(Object.keys(allServers).length).toEqual(0);
   });
+  it('should update table after updateServerTable()', function () {
+    updateServerTable();
+    submitServerInfo();
+    let tdList = document.querySelectorAll('#serverTable tbody tr td');
+
+    expect(tdList.length).toEqual(2);
+    expect(tdList[0].innerText).toEqual('Alice');
+    expect(tdList[1].innerText).toEqual('$0.00');
+  });
   //
   //Q -> if i use after each with line 17 .toequal(1) faile my test but if i do not use aftereach line 17 .toequal(0)throw an error
   afterEach(function () {
